@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"github.com/WJX2001/gin-vue-admin-server/core"
 	"github.com/WJX2001/gin-vue-admin-server/global"
+	systemReq "github.com/WJX2001/gin-vue-admin-server/model/system/request"
+	"github.com/WJX2001/gin-vue-admin-server/utils"
 	"github.com/gin-gonic/gin"
+	"reflect"
 )
 
 func main() {
@@ -17,6 +20,20 @@ func initializeSystem() {
 	global.GVA_VP = core.Viper()
 	fmt.Println("wjx-test222:", global.GVA_VP.GetString("jwt.wjx-test"))
 	//fmt.Println("wjxTest", global.GVA_VP.GetString("jwt.signing-key"))
+	var r systemReq.Register
+
+	typ := reflect.TypeOf(r)
+	val := reflect.ValueOf(r)
+	tagVal := typ.Field(1)
+	fmt.Println(typ, "typeof")
+	fmt.Println(val, "value..")
+	fmt.Println(val.Kind(), "kind...")
+	fmt.Println(val.NumField(), "number fields")
+	fmt.Println(tagVal, "fields")
+	fmt.Println(typ.Field(1).Anonymous)
+	fmt.Println(tagVal.Name, "tagVal Name")
+	tmp := utils.RegisterVerify[tagVal.Name]
+	fmt.Println(tmp, "tmp")
 }
 
 func RunServer() {
