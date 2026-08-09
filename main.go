@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/WJX2001/gin-vue-admin-server/core"
 	"github.com/WJX2001/gin-vue-admin-server/global"
+	"github.com/WJX2001/gin-vue-admin-server/initialize"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,6 +17,7 @@ func main() {
 func initializeSystem() {
 	global.GVA_VP = core.Viper() // 初始化Viper
 	//initialize.OtherInit()
+	global.GVA_DB = initialize.Gorm() // gorm连接数据库
 	fmt.Println("wjx-test。。。。。", global.GVA_VP.GetString("jwt.wjx-test"))
 
 }
