@@ -3,10 +3,11 @@ package system
 import (
 	"context"
 	"errors"
+	"sync/atomic"
+
 	"github.com/WJX2001/gin-vue-admin-server/global"
 	"github.com/WJX2001/gin-vue-admin-server/model/system"
 	"gorm.io/gorm"
-	"sync/atomic"
 )
 
 type SecurityConfigService struct{}

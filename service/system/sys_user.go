@@ -15,7 +15,7 @@ type UserService struct{}
 
 func (userService *UserService) Register(ctx context.Context, u system.SysUser) (userInter system.SysUser, err error) {
 	var user system.SysUser
-	if !errors.Is(global.GVA_DB.WithContext(ctx).Where("username = ?", u.Username).First(&user).Error, gorm.ErrRecordNotFound) {
+	if !errors.Is(global.GVA_DB.WithContext(ctx).Where("username = ?", u.Username).First(&user).Error, gorm.ErrRecordNotFound) { // 判断用户名是否注册
 		return userInter, errors.New("用户名已注册")
 	}
 	// 否则 附加 uuid 密码 hash 加密 注册

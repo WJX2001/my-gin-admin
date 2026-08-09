@@ -1,6 +1,7 @@
 package system
 
 import (
+	"fmt"
 	"github.com/WJX2001/gin-vue-admin-server/model/common/response"
 	"github.com/WJX2001/gin-vue-admin-server/model/system"
 	systemReq "github.com/WJX2001/gin-vue-admin-server/model/system/request"
@@ -13,6 +14,7 @@ func (b *BaseApi) Register(c *gin.Context) {
 	var r systemReq.Register
 	err := c.ShouldBindJSON(&r)
 	if err != nil {
+		fmt.Println(err.Error(), "err")
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
