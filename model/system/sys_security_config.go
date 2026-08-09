@@ -2,6 +2,14 @@ package system
 
 import "github.com/WJX2001/gin-vue-admin-server/global"
 
+const (
+	defaultCaptchaOpen    = 0
+	defaultCaptchaTimeout = 3600
+	defaultCaptchaKeyLong = 6
+	defaultCaptchaWidth   = 240
+	defaultCaptchaHeight  = 80
+)
+
 // SysSecurityConfig 安全配置 单行表 固定 id=1 启动加载入内存缓存 保存即热更新
 type SysSecurityConfig struct {
 	global.GVA_MODEL
@@ -33,4 +41,28 @@ type SysSecurityConfig struct {
 
 func (SysSecurityConfig) TableName() string {
 	return "sys_security_config"
+}
+
+func DefaultSecurityConfig() SysSecurityConfig {
+	return SysSecurityConfig{
+		CaptchaOpen:                defaultCaptchaOpen,
+		CaptchaTimeout:             defaultCaptchaTimeout,
+		KeyLong:                    defaultCaptchaKeyLong,
+		ImgWidth:                   defaultCaptchaWidth,
+		ImgHeight:                  defaultCaptchaHeight,
+		PwdMinLength:               8,
+		PwdRequireUpper:            false,
+		PwdRequireLower:            false,
+		PwdRequireDigit:            false,
+		PwdRequireSpecial:          false,
+		LimitEnable:                false,
+		LimitWindow:                60,
+		LimitCount:                 30,
+		LockEnable:                 false,
+		LockThreshold:              5,
+		LockDuration:               30,
+		PwdExpireEnable:            false,
+		PwdExpireDays:              90,
+		ForceNewUserChangePassword: false,
+	}
 }
