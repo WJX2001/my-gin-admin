@@ -1,9 +1,9 @@
 package initialize
 
 import (
-	"fmt"
 	"github.com/WJX2001/gin-vue-admin-server/global"
 	"github.com/WJX2001/gin-vue-admin-server/model/system"
+	"github.com/WJX2001/gin-vue-admin-server/utils/logger"
 	"gorm.io/gorm"
 	"os"
 )
@@ -24,7 +24,7 @@ func Gorm() *gorm.DB {
 
 func RegisterTables() {
 	if global.GVA_CONFIG.System.DisableAutoMigrate {
-		fmt.Println("auto-migrate is disabled,skipping table registration")
+		logger.Bg().Mod("system").Info("auto-migrate is disabled, skipping table registration")
 		return
 	}
 
@@ -34,8 +34,7 @@ func RegisterTables() {
 		system.SysSecurityConfig{},
 	)
 	if err != nil {
-		// TODO: 这里将来用 zap 日志
-		fmt.Println("register table failed")
+		logger.Bg().Mod("system").Err(err).Error("register table failed")
 		os.Exit(1)
 	}
 }

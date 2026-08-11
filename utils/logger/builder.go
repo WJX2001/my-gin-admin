@@ -20,6 +20,10 @@ type Builder struct {
 	err       error
 }
 
+func Bg() *Builder {
+	return &Builder{}
+}
+
 // WithCtx 请求链路人口
 func WithCtx(ctx context.Context) *Builder {
 	return &Builder{
