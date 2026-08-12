@@ -29,6 +29,7 @@ system:
   db-type: mysql
   # 禁用自动迁移数据库表结构，生产环境建议设为true，手动迁移
   disable-auto-migrate: false
+  router-prefix: ""
 
 mysql:
   path: 127.0.0.1
