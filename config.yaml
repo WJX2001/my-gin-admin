@@ -1,6 +1,7 @@
-
 jwt:
   wjx-test: wjx44445
+  expires-time: 7d
+  buffer-time: 1d
 
 
 # zap logger configuration
@@ -22,7 +23,9 @@ zap:
     - http
     - sql
 
+# system configuration
 system:
+  addr: 8080
   db-type: mysql
   # 禁用自动迁移数据库表结构，生产环境建议设为true，手动迁移
   disable-auto-migrate: false
@@ -39,3 +42,4 @@ mysql:
   max-idle-conns: 10
   max-open-conns: 100
   singular: false
+

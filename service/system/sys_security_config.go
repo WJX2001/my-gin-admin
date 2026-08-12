@@ -3,6 +3,7 @@ package system
 import (
 	"context"
 	"errors"
+	"github.com/WJX2001/gin-vue-admin-server/utils/logger"
 	"sync/atomic"
 
 	"github.com/WJX2001/gin-vue-admin-server/global"
@@ -56,4 +57,14 @@ func (s *SecurityConfigService) Current(ctx context.Context) system.SysSecurityC
 		setSecurityConfigCache(cfg)
 	}
 	return cfg
+}
+
+// LoadAll 启动时加载配置入内存缓存
+func (s *SecurityConfigService) LoadAll(ctx context.Context) {
+	cfg, err := s.Get(ctx)
+	if err != nil {
+		logger.WithCtx(ctx).Mod("biz").Error("加载安全配置失效!")
+		return
+	}
+	setSecurityConfigCache(cfg)
 }

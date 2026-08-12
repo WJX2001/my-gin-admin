@@ -19,3 +19,267 @@ net/http.serverHandler.ServeHTTP
 	/Users/wjx2020/.gvm/gos/go1.26.0/src/net/http/server.go:3311
 net/http.(*conn).serve
 	/Users/wjx2020/.gvm/gos/go1.26.0/src/net/http/server.go:2073
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:17.941	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 21, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:17.941	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:24.208	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 4, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:24.208	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:34.446	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 4, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:34.446	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:49.332	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 2, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:40:49.332	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:41:02.859	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 1, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:41:02.862	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:41:12.932	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 1, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:41:12.932	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:41:43.068	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 3, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:41:43.069	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:42:05.518	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 4, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:42:05.519	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:15
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:42:44.471	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 5, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:42:44.471	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:16
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:43:07.332	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 1, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:43:07.332	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:43:15.943	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55	SQL 执行错误	{"node": "", "app_id": "", "env": "", "sql": "SELECT `jwt` FROM `jwt_blacklists` WHERE `jwt_blacklists`.`deleted_at` IS NULL", "rows": 0, "elapsed_ms": 2, "mod": "sql", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55\ngorm.io/gorm.(*processor).Execute\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140\ngorm.io/gorm.(*DB).Find\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/initialize/internal.(*GormLogger).Trace
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/initialize/internal/gorm_logger_writer.go:55
+gorm.io/gorm.(*processor).Execute
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/callbacks.go:140
+gorm.io/gorm.(*DB).Find
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/gorm.io/gorm@v1.31.2/finisher_api.go:182
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:14
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 22:43:15.943	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16	加载数据库jwt黑名单失败！	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "Error 1146 (42S02): Table 'gin_admin.jwt_blacklists' doesn't exist", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/service/system.LoadAll\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16\ngithub.com/WJX2001/gin-vue-admin-server/core.RunServer\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17\nmain.main\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11\nruntime.main\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290"}
+github.com/WJX2001/gin-vue-admin-server/service/system.LoadAll
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/service/system/jwt_black_list.go:16
+github.com/WJX2001/gin-vue-admin-server/core.RunServer
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/core/server.go:17
+main.main
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/main.go:11
+runtime.main
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/runtime/proc.go:290
