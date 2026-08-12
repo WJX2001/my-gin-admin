@@ -1,0 +1,21 @@
+[https://github.com/WJX2001/my-gin-admin]2026-08-12 16:45:09.595	[31merror[0m	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/api/v1/system/sys_user.go:41	注册失败!	{"node": "", "app_id": "", "env": "", "mod": "biz", "request_id": "", "trace_id": "", "device_id": "", "client_ip": "", "http_method": "", "http_path": "", "error_msg": "用户名已注册", "error_stack": "github.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).assemble\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:75\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).log\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:86\ngithub.com/WJX2001/gin-vue-admin-server/utils/logger.(*Builder).Error\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/utils/logger/builder.go:92\ngithub.com/WJX2001/gin-vue-admin-server/api/v1/system.(*BaseApi).Register\n\t/Users/wjx2020/Developer/the-web3/my-gin-admin/server/api/v1/system/sys_user.go:41\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/context.go:192\ngithub.com/gin-gonic/gin.CustomRecoveryWithWriter.func1\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/recovery.go:90\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/context.go:192\ngithub.com/gin-gonic/gin.LoggerWithConfig.func1\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/logger.go:282\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/context.go:192\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/gin.go:722\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/gin.go:672\nnet/http.serverHandler.ServeHTTP\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/net/http/server.go:3311\nnet/http.(*conn).serve\n\t/Users/wjx2020/.gvm/gos/go1.26.0/src/net/http/server.go:2073"}
+github.com/WJX2001/gin-vue-admin-server/api/v1/system.(*BaseApi).Register
+	/Users/wjx2020/Developer/the-web3/my-gin-admin/server/api/v1/system/sys_user.go:41
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/context.go:192
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/recovery.go:90
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/context.go:192
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/logger.go:282
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/context.go:192
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/gin.go:722
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/wjx2020/.gvm/pkgsets/go1.26.0/global/pkg/mod/github.com/gin-gonic/gin@v1.12.0/gin.go:672
+net/http.serverHandler.ServeHTTP
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/net/http/server.go:3311
+net/http.(*conn).serve
+	/Users/wjx2020/.gvm/gos/go1.26.0/src/net/http/server.go:2073

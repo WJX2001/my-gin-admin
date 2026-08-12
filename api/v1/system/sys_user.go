@@ -1,12 +1,12 @@
 package system
 
 import (
-	"fmt"
 	"github.com/WJX2001/gin-vue-admin-server/model/common/response"
 	"github.com/WJX2001/gin-vue-admin-server/model/system"
 	systemReq "github.com/WJX2001/gin-vue-admin-server/model/system/request"
 	systemRes "github.com/WJX2001/gin-vue-admin-server/model/system/response"
 	"github.com/WJX2001/gin-vue-admin-server/utils"
+	"github.com/WJX2001/gin-vue-admin-server/utils/logger"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,7 +14,6 @@ func (b *BaseApi) Register(c *gin.Context) {
 	var r systemReq.Register
 	err := c.ShouldBindJSON(&r)
 	if err != nil {
-		fmt.Println(err.Error(), "err")
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
@@ -39,9 +38,7 @@ func (b *BaseApi) Register(c *gin.Context) {
 	}
 	userReturn, err := userService.Register(c.Request.Context(), *user)
 	if err != nil {
-		//logger.WithCtx(c.Request.Context()).Mod("biz").E
-		// TODO: 临时写法 后续接入zap 日志
-		println("注册失败", err.Error())
+		logger.WithCtx(c.Request.Context()).Mod("biz").Err(err).Error("注册失败!")
 		response.FailWithDetailed(systemRes.SysUserResponse{User: userReturn}, "注册失败", c)
 		return
 	}

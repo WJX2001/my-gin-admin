@@ -2,6 +2,26 @@
 jwt:
   wjx-test: wjx44445
 
+
+# zap logger configuration
+zap:
+  level: info
+  prefix: '[https://github.com/WJX2001/my-gin-admin]'
+  format: console
+  director: log
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  show-line: true
+  log-in-console: false
+  retention-day: -1
+  access-req-body: true
+  access-resp-data: true
+  access-req-headers: true
+  access-log-max-bytes: 1024
+  file-only-modules:
+    - http
+    - sql
+
 system:
   db-type: mysql
   # 禁用自动迁移数据库表结构，生产环境建议设为true，手动迁移

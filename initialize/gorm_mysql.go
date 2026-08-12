@@ -1,9 +1,9 @@
 package initialize
 
 import (
-	"fmt"
 	"github.com/WJX2001/gin-vue-admin-server/config"
 	"github.com/WJX2001/gin-vue-admin-server/global"
+	"github.com/WJX2001/gin-vue-admin-server/initialize/internal"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"time"
@@ -26,9 +26,8 @@ func initMysqlDatabase(m config.Mysql) *gorm.DB {
 	}
 
 	// 数据库配置
-	//general := m.GeneralDB
-	if db, err := gorm.Open(mysql.New(mysqlConfig), &gorm.Config{}); err != nil {
-		fmt.Println("没有啊")
+	general := m.GeneralDB
+	if db, err := gorm.Open(mysql.New(mysqlConfig), internal.Gorm.Config(general)); err != nil {
 		panic(err)
 	} else {
 		db.InstanceSet("gorm:table_options", "ENGINE="+m.Engine)
@@ -36,17 +35,6 @@ func initMysqlDatabase(m config.Mysql) *gorm.DB {
 		sqlDB.SetMaxIdleConns(m.MaxIdleConns)
 		sqlDB.SetMaxOpenConns(m.MaxOpenConns)
 		sqlDB.SetConnMaxLifetime(time.Duration(m.ConnMaxLifetime) * time.Second)
-		fmt.Println("连接成功")
 		return db
 	}
-	//if db, err := gorm.Open(mysql.New(mysqlConfig), internal.Gorm.Config(general)); err != nil {
-	//	panic(err)
-	//} else {
-	//	db.InstanceSet("gorm:table_options", "ENGINE="+m.Engine)
-	//	sqlDB, _ := db.DB()
-	//	sqlDB.SetMaxIdleConns(m.MaxIdleConns)
-	//	sqlDB.SetMaxOpenConns(m.MaxOpenConns)
-	//	sqlDB.SetConnMaxLifetime(time.Duration(m.ConnMaxLifetime) * time.Second)
-	//	return db
-	//}
 }
