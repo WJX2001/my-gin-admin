@@ -1,3 +1,8 @@
 
+# Editor directories and files
+
 
 config.yaml
+log/*
+.idea/*
+.idea/server.iml

@@ -32,6 +32,7 @@ func RegisterTables() {
 	err := db.AutoMigrate(
 		system.SysUser{},
 		system.SysSecurityConfig{},
+		system.JwtBlacklist{},
 	)
 	if err != nil {
 		logger.Bg().Mod("system").Err(err).Error("register table failed")
