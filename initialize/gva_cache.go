@@ -10,9 +10,10 @@ import (
 // InitGvaCache 初始化通用缓存句柄 global.GVA_CACHE
 // 必须在 Redis 初始化之后调用：有 Redis 用 Redis 后端，否则用内存后端
 func InitGvaCache() {
-
 	// TODO: 这里对Redis 进行初始化
-
+	if global.GVA_REDIS != nil {
+		//global.GVA_CACHE = gva_cache.
+	}
 	dr, err := utils.ParseDuration(global.GVA_CONFIG.JWT.ExpiresTime)
 	if err != nil {
 		// JWT 过期配置非法应在启动期暴露

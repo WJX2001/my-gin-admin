@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"github.com/WJX2001/gin-vue-admin-server/model/system"
 	systemReq "github.com/WJX2001/gin-vue-admin-server/model/system/request"
 	"github.com/WJX2001/gin-vue-admin-server/utils/logger"
 	"github.com/gin-gonic/gin"
@@ -74,4 +75,19 @@ func requestUsesHTTPS(r *http.Request) bool {
 	// 有些多层代理环境，这个头会带多个值，逗号分隔，例如： X-Forwarded-Proto：https,http
 	forwardedProto := strings.SplitN(r.Header.Get("X-Forwarded-Proto"), ",", 2)[0]
 	return strings.EqualFold(strings.TrimSpace(forwardedProto), "https")
+}
+
+// LoginTokenWithExpire 签发登录 token 可携带 MustChangePwd 强制改密标记
+func LoginTokenWithExpire(user system.Login, mustChangePwd bool) (token string, claims systemReq.CustomClaims, err error) {
+	j := NewJWT()
+	claims = j.CreateClaims(systemReq.BaseClaims{
+		UUID:     user.GetUUID(),
+		ID:       user.GetUserId(),
+		Nickname: user.GetNickname(),
+		Username: user.GetUsername(),
+		UserType: user.GetUserType(),
+	})
+	claims.MustChangePwd = mustChangePwd
+	token, err = j.CreateToken(claims)
+	return
 }

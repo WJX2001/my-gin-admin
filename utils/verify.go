@@ -1,3 +1,6 @@
 package utils
 
-var RegisterVerify = Rules{"Username": {NotEmpty()}, "NickName": {NotEmpty()}, "Password": {NotEmpty()}, "AuthorityId": {NotEmpty()}}
+var (
+	LoginVerify    = Rules{"Username": {NotEmpty()}, "Password": {NotEmpty()}}
+	RegisterVerify = Rules{"Username": {NotEmpty()}, "NickName": {NotEmpty()}, "Password": {NotEmpty()}}
+)

@@ -6,6 +6,18 @@ import (
 	"time"
 )
 
+type Login interface {
+	GetUsername() string
+	GetNickname() string
+	GetUUID() uuid.UUID
+	GetUserId() uint
+	//GetAuthorityId() uint
+	GetUserType() UserType
+	GetUserInfo() any
+}
+
+var _ Login = new(SysUser)
+
 type SysUser struct {
 	global.GVA_MODEL
 	UUID      uuid.UUID `json:"uuid" gorm:"index;comment:用户UUID"`
@@ -26,4 +38,32 @@ type SysUser struct {
 	//OriginSetting      common.JSONMap `json:"originSetting" form:"originSetting" gorm:"type:text;default:null;column:origin_setting;comment:配置;"` //配置
 	PasswordUpdatedAt  *time.Time `json:"passwordUpdatedAt" gorm:"comment:密码最后修改时间"` //密码最后修改时间
 	MustChangePassword bool       `json:"-" gorm:"default:false;comment:是否必须修改初始密码"` //是否必须修改初始密码
+}
+
+func (SysUser) TableName() string {
+	return "sys_users"
+}
+
+func (s *SysUser) GetUsername() string {
+	return s.Username
+}
+
+func (s *SysUser) GetNickname() string {
+	return s.NickName
+}
+
+func (s *SysUser) GetUUID() uuid.UUID {
+	return s.UUID
+}
+
+func (s *SysUser) GetUserId() uint {
+	return s.ID
+}
+
+func (s *SysUser) GetUserType() UserType {
+	return UserTypeAdmin
+}
+
+func (s *SysUser) GetUserInfo() any {
+	return *s
 }

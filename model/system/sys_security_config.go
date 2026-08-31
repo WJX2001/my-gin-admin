@@ -1,6 +1,9 @@
 package system
 
-import "github.com/WJX2001/gin-vue-admin-server/global"
+import (
+	"github.com/WJX2001/gin-vue-admin-server/global"
+	"time"
+)
 
 const (
 	defaultCaptchaOpen    = 0
@@ -41,6 +44,11 @@ type SysSecurityConfig struct {
 
 func (SysSecurityConfig) TableName() string {
 	return "sys_security_config"
+}
+
+// LockDurationTimeout 锁定时长
+func (c SysSecurityConfig) LockDurationTimeout() time.Duration {
+	return time.Duration(c.LockDuration) * time.Minute
 }
 
 func DefaultSecurityConfig() SysSecurityConfig {

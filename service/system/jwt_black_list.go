@@ -9,6 +9,11 @@ import (
 
 type JwtService struct{}
 
+func (jwtService *JwtService) GetRedisJWT(ctx context.Context, userName string) (redisJWT string, err error) {
+	redisJWT, err = global.GVA_REDIS.Get(ctx, userName).Result()
+	return redisJWT, err
+}
+
 func LoadAll(ctx context.Context) {
 	var data []string
 	err := global.GVA_DB.WithContext(ctx).Model(&system.JwtBlacklist{}).Select("jwt").Find(&data).Error
