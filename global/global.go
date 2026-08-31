@@ -14,6 +14,7 @@ var (
 	GVA_DB                  *gorm.DB
 	GVA_CONFIG              config.Server
 	GVA_REDIS               redis.UniversalClient
+	GVA_REDISList           map[string]redis.UniversalClient
 	GVA_VP                  *viper.Viper
 	GVA_LOG                 *zap.Logger
 	GVA_Concurrency_Control = &singleflight.Group{}

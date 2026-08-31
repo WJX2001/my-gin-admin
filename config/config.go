@@ -1,9 +1,11 @@
 package config
 
 type Server struct {
-	JWT    JWT    `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
-	Zap    Zap    `mapstructure:"zap" json:"zap" yaml:"zap"`
-	System System `mapstructure:"system" json:"system" yaml:"system"`
+	JWT       JWT     `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
+	Zap       Zap     `mapstructure:"zap" json:"zap" yaml:"zap"`
+	Redis     Redis   `mapstructure:"redis" json:"redis" yaml:"redis"`
+	RedisList []Redis `mapstructure:"redis-list" json:"redis-list" yaml:"redis-list"`
+	System    System  `mapstructure:"system" json:"system" yaml:"system"`
 
 	// gorm
 	Mysql Mysql `mapstructure:"mysql" json:"mysql" yaml:"mysql"`

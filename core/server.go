@@ -10,7 +10,12 @@ import (
 )
 
 func RunServer() {
-
+	if global.GVA_CONFIG.System.UseRedis {
+		initialize.Redis()
+		if global.GVA_CONFIG.System.UseMultipoint {
+			initialize.RedisList()
+		}
+	}
 	// 初始化通用缓存（必须在 Redis 之后：有 Redis 用 Redis，否则用内存）
 	initialize.InitGvaCache()
 

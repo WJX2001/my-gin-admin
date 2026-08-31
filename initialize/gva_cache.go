@@ -12,7 +12,9 @@ import (
 func InitGvaCache() {
 	// TODO: 这里对Redis 进行初始化
 	if global.GVA_REDIS != nil {
-		//global.GVA_CACHE = gva_cache.
+		global.GVA_CACHE = gva_cache.NewRedisCache(global.GVA_REDIS)
+		logger.Bg().Mod("system").Info("GVA_CACHE 使用 Redis 后端")
+		return
 	}
 	dr, err := utils.ParseDuration(global.GVA_CONFIG.JWT.ExpiresTime)
 	if err != nil {

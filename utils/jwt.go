@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"context"
 	"errors"
 	"github.com/WJX2001/gin-vue-admin-server/global"
 	"github.com/WJX2001/gin-vue-admin-server/model/system/request"
@@ -95,12 +96,13 @@ func (j *JWT) ParseToken(tokenString string) (*request.CustomClaims, error) {
 	return nil, TokenInvalid
 }
 
-//func SetRedisJWT(jwt string, userName string) (err error) {
-//	// 此处过期时间等于 jwt 过期时间
-//	dr,err := ParseDuration(global.GVA_CONFIG.JWT.ExpiresTime)
-//	if err != nil {
-//		return err
-//	}
-//	timer := dr
-//	err = global.G
-//}
+func SetRedisJWT(jwt string, userName string) (err error) {
+	// 此处过期时间等于 jwt 过期时间
+	dr, err := ParseDuration(global.GVA_CONFIG.JWT.ExpiresTime)
+	if err != nil {
+		return err
+	}
+	timer := dr
+	err = global.GVA_REDIS.Set(context.Background(), userName, jwt, timer).Err()
+	return err
+}

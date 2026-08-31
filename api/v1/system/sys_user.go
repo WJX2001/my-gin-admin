@@ -10,6 +10,7 @@ import (
 	"github.com/WJX2001/gin-vue-admin-server/utils"
 	"github.com/WJX2001/gin-vue-admin-server/utils/logger"
 	"github.com/gin-gonic/gin"
+	"github.com/redis/go-redis/v9"
 	"strconv"
 	"time"
 )
@@ -127,7 +128,39 @@ func (b *BaseApi) TokenNext(c *gin.Context, user system.SysUser, mustChangePwd b
 		return
 	}
 
-	//if jwtStr,err := jwtService.Get
+	if jwtStr, err := jwtService.GetRedisJWT(c.Request.Context(), user.Username); err == redis.Nil {
+		if err := utils.SetRedisJWT(token, user.Username); err != nil {
+			logger.WithCtx(c.Request.Context()).Mod("biz").Err(err).Error("设置登录状态失败！")
+			response.FailWithMessage("设置登录状态失败", c)
+			return
+		}
+		utils.SetToken(c, token, int(claims.RegisteredClaims.ExpiresAt.Unix()-time.Now().Unix()))
+		response.OkWithDetailed(systemRes.LoginResponse{
+			User: user, Token: token,
+			ExpiresAt:          claims.RegisteredClaims.ExpiresAt.Unix() * 1000,
+			NeedChangePassword: mustChangePwd,
+		}, "登录成功", c)
+	} else if err != nil {
+		logger.WithCtx(c.Request.Context()).Mod("biz").Err(err).Error("设置登录状态失败！")
+		response.FailWithMessage("设置登录状态失败", c)
+	} else {
+		var blackJWT system.JwtBlacklist
+		blackJWT.Jwt = jwtStr
+		if err := jwtService.JsonInBlacklist(c.Request.Context(), blackJWT); err != nil {
+			response.FailWithMessage("jwt作废失败", c)
+			return
+		}
+		if err := utils.SetRedisJWT(token, user.GetUsername()); err != nil {
+			response.FailWithMessage("设置登录状态失败", c)
+			return
+		}
+		utils.SetToken(c, token, int(claims.RegisteredClaims.ExpiresAt.Unix()-time.Now().Unix()))
+		response.OkWithDetailed(systemRes.LoginResponse{
+			User: user, Token: token,
+			ExpiresAt:          claims.RegisteredClaims.ExpiresAt.Unix() * 1000,
+			NeedChangePassword: mustChangePwd,
+		}, "登录成功", c)
+	}
 }
 
 func (b *BaseApi) Register(c *gin.Context) {
