@@ -23,6 +23,10 @@ func Routers() *gin.Engine {
 			c.JSON(http.StatusOK, "ok")
 		})
 	}
+
+	{
+		systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
+	}
 	{
 		systemRouter.InitUserRouter(PrivateGroup)
 	}

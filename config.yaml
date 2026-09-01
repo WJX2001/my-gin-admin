@@ -23,6 +23,20 @@ zap:
     - http
     - sql
 
+# redis configuration
+# redis configuration
+redis:
+  #是否使用redis集群模式
+  useCluster: false
+  #使用集群模式addr和db默认无效
+  addr: 127.0.0.1:6379
+  password: ""
+  db: 0
+  clusterAddrs:
+    - "172.21.0.3:7000"
+    - "172.21.0.4:7001"
+    - "172.21.0.2:7002"
+
 # system configuration
 system:
   addr: 8080
@@ -30,6 +44,7 @@ system:
   # 禁用自动迁移数据库表结构，生产环境建议设为true，手动迁移
   disable-auto-migrate: false
   router-prefix: ""
+  use-redis: true # 使用redis
 
 mysql:
   path: 127.0.0.1

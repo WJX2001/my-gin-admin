@@ -1,14 +1,58 @@
 package system
 
 import (
+	"github.com/WJX2001/gin-vue-admin-server/global"
+	"github.com/WJX2001/gin-vue-admin-server/model/common/response"
+	systemRes "github.com/WJX2001/gin-vue-admin-server/model/system/response"
 	"github.com/WJX2001/gin-vue-admin-server/utils/captcha"
+	"github.com/WJX2001/gin-vue-admin-server/utils/logger"
+	"github.com/gin-gonic/gin"
 	"github.com/mojocn/base64Captcha"
 	"strconv"
+	"time"
 )
 
+// store 验证码存储：自动跟随 GVA_CACHE 后端——开启 Redis 时多实例共享，未开启时用进程内存
+// 无需再手动切换 Redis/内存(原两套逻辑与 GVA——CACHE 重合，已统一收敛到 captcha.CacheStore).
 var store base64Captcha.Store = captcha.NewCacheStore()
 
 type BaseApi struct{}
+
+// Captcha
+// @Tags Base
+
+func (b *BaseApi) Captcha(c *gin.Context) {
+	cfg := securityConfigService.Current(c.Request.Context())
+	// 判断验证码是否开启
+	openCaptcha := cfg.CaptchaOpen           // 错误 N 次后出验证码
+	openCaptchaTimeOut := cfg.CaptchaTimeout // 计数缓存超时
+	key := c.ClientIP()
+
+	v, ok := global.GVA_CACHE.Get(key)
+	if !ok {
+		global.GVA_CACHE.Set(key, int64(1), time.Second*time.Duration(openCaptchaTimeOut)) // int64 以匹配 GVA_CACHE.Increment 计数类型（内存后端 IncrementInt64）
+	}
+
+	var oc bool
+	if openCaptcha == 0 || openCaptcha < interfaceToInt(v) {
+		oc = true
+	}
+	// 生成默认数字 driver
+	driver := base64Captcha.NewDriverDigit(cfg.ImgHeight, cfg.ImgWidth, cfg.KeyLong, 0.7, 80)
+	cp := base64Captcha.NewCaptcha(driver, store)
+	id, b64s, _, err := cp.Generate()
+	if err != nil {
+		logger.WithCtx(c.Request.Context()).Mod("biz").Err(err).Error("验证码获取失败!")
+		response.FailWithMessage("验证码获取失败", c)
+		return
+	}
+	response.OkWithDetailed(systemRes.SysCaptchaResponse{
+		CaptchaId:     id,
+		PicPath:       b64s,
+		CaptchaLength: cfg.KeyLong,
+		OpenCaptcha:   oc,
+	}, "验证码获取成功", c)
+}
 
 // 类型转换
 func interfaceToInt(v interface{}) (i int) {

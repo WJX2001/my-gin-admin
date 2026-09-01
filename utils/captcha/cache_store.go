@@ -8,7 +8,7 @@ import (
 
 // defaultCaptchaExpiration 验证码答案默认有效期。
 // 验证码校验通过即焚（Verify 时 clear=true 立即删除），此 TTL 仅为未使用验证码的兜底回收时间。
-const defaultCaptchaExpiration = time.Second * 180
+const defaultCaptchaExpiration = time.Second * 360
 
 type CacheStore struct {
 	Expiration time.Duration
